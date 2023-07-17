@@ -50,11 +50,11 @@ function ausgabeNamenParams(firstName, familyName) {
 }
 
 /***** Funktionen 03a *****/
-// 03a. Vorbereitung -Trennen der Funktionalitäten
+// 03a. Vorbereitung - Trennen der Funktionalitäten
 // Postulat: one function = one job (uncle Bob)
 // SRP single responsibility principle
 
-ausgabeNamenParamsZwei("Max", "Muetze")
+// ausgabeNamenParamsZwei("Max", "Muetze")
 
 function ausgabeNamenParamsZwei(firstName, familyName) {
 
@@ -64,4 +64,28 @@ function ausgabeNamenParamsZwei(firstName, familyName) {
 
     // 2. Funktionalität: string output
     console.log(outputStr);
+}
+
+/***** Funktionen 03b *****/
+// 03b Funktionalitäten --> Funktionen | return
+
+// 1. Funktionalität: string composing
+
+output(getString("Max", "Muetze"));
+output(getString(prompt("Vorname?"), prompt("Name?")));
+
+/**  INPUT --> Parameter  |  return --> OUTPUT   **/
+function getString(firstName, familyName) {
+    const GAP = " ";
+    let outputStr = "Hallo" + GAP + firstName + GAP + familyName + "!";
+    return outputStr; // Daten werden an den Ort des calls geschickt!
+    console.log("Hi"); // return bricht die Funktion ab!
+}
+
+// 2. Funktionalität: string output
+// output("Hi");
+// output(2);
+// output(true);
+function output(outputData) {
+    console.log(outputData);
 }
