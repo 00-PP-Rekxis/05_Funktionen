@@ -16,7 +16,7 @@ function test()
 /***** Funktionen 02a *****/
 // 2a. Parametrisierung + Datenübergabe von INNEN
 
-ausgabeNamen();
+// ausgabeNamen();
 
 function ausgabeNamen() {
     // what happens in VEGAS ...
@@ -24,5 +24,18 @@ function ausgabeNamen() {
     console.log(`Hallo ${firstName}!`);
 }
 
-console.log(firstName); // Fehler --> SCOPE!
+// console.log(firstName); // Fehler --> SCOPE!
+
+/***** Funktionen 02b *****/
+// 2b. Parametrisierung + Datenübergabe von AUSSEN
+
+// Arugmente sind Daten für PArameter
+ausgabeNamenZwei("Peter"); // call + Argument(e)
+ausgabeNamenZwei("Sohrab");
+ausgabeNamenZwei("Yalcin");
+
+// Funktion mit Parameter(n)
+function ausgabeNamenZwei(firstName) {
+    console.log(`Hallo ${firstName}!`);
+}
 
